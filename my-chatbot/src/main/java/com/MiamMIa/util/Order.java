@@ -40,4 +40,27 @@ public class Order {
     public void clearItems() {
         items.clear();
     }
+
+    // Méthode main pour tester la classe
+    public static void main(String[] args) {
+        // Créer une commande pour la table 5
+        Order order = new Order(5);
+
+        // Ajouter des produits
+        order.addItem("Pizza");
+        order.addItem("Pâtes");
+        order.addItem("Coca-Cola");
+
+        // Afficher les détails de la commande
+        System.out.println("Table: " + order.getTableNumber());
+        System.out.println("Produits: " + order.getItems());
+
+        // Retirer un produit
+        order.removeItem("Pâtes");
+        System.out.println("Produits après suppression: " + order.getItems());
+
+        // Vider la commande
+        order.clearItems();
+        System.out.println("Produits après avoir vidé la commande: " + order.getItems());
+    }
 }
