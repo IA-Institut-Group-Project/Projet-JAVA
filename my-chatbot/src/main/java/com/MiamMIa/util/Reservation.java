@@ -28,7 +28,7 @@ public class Reservation {
                ", Nombre de personnes = " + nombreDePersonnes;
     }
 
-   // Méthode principale
+   // tester
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
