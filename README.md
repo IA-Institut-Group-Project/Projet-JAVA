@@ -1,2 +1,16 @@
 # Projet-JAVA
-### Projet JAVA avec Assogane Anaïs, Addi Amina, Gaoui Yasmine et Meddas Kilian
+
+# MiamMia
+## Description
+
+> [!note] **Amina ADDI**  
+> Rôle: 
+
+> [!info] **Anaïs ASSOGANE**  
+> Rôle:
+
+> [!tip] **Yasmine GAOUI**  
+> Rôle
+
+> [!success] **Kilian MEDDAS**  
+> Rôle:
