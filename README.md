@@ -3,14 +3,14 @@
 # MiamMia
 ## Description
 
-> [!note] **Amina ADDI**  
+>[!note] **Amina ADDI**  
 > Rôle: 
 
-> [!info] **Anaïs ASSOGANE**  
+>[!info] **Anaïs ASSOGANE**  
 > Rôle:
 
-> [!tip] **Yasmine GAOUI**  
+>[!tip] **Yasmine GAOUI**  
 > Rôle
 
-> [!success] **Kilian MEDDAS**  
+>[!success] **Kilian MEDDAS**  
 > Rôle:
