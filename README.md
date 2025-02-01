@@ -3,5 +3,6 @@
 # MiamMia
 ## Description
 
-| :memo:        | Take note of this       |
-| Groupe |:------------------------|
+| :memo:        | Membres du groupe       |
+|---------------|:------------------------|
+> **Amina ADDI** **Anaïs ASSOGANE** **Yasmine GAOUI** **Kilian MEDDAS**
