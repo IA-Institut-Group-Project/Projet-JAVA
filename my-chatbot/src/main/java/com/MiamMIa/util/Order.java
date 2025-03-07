@@ -29,6 +29,7 @@ public class Order {
     // Ajouter un produit
     public void addItem(String item) {
         items.add(item);
+        System.out.println(item + " ajouté !");
     }
 
     // Supprimer un produit
@@ -39,6 +40,13 @@ public class Order {
     // Vider la liste de produits
     public void clearItems() {
         items.clear();
+    }
+
+    // Méthode pour afficher les détails de la commande
+    public String afficherOrder() {
+        String details = "Table: " + getTableNumber() + "\nProduits: " + getItems();
+        System.out.println(details);
+        return details;
     }
 
     // Méthode main pour tester la classe
@@ -52,8 +60,7 @@ public class Order {
         order.addItem("Coca-Cola");
 
         // Afficher les détails de la commande
-        System.out.println("Table: " + order.getTableNumber());
-        System.out.println("Produits: " + order.getItems());
+        order.afficherOrder();
 
         // Retirer un produit
         order.removeItem("Pâtes");

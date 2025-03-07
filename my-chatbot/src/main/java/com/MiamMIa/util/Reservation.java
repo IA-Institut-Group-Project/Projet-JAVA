@@ -22,22 +22,28 @@ public class Reservation {
         return nombreDePersonnes;
     }
 
+    // Afficher la réservation
     public String afficherReservation() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
         return "Réservation : Date et Heure = " + datetime.format(formatter) +
                ", Nombre de personnes = " + nombreDePersonnes;
     }
 
-   // tester
+    // Méthode principale
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
 
-        try {
+        try (Scanner scanner = new Scanner(System.in)) {
             // Demander la date et l'heure
             System.out.print("Entrez la date et l'heure (format: dd-MM-yyyy HH:mm) : ");
             String dateStr = scanner.nextLine();
-            LocalDateTime date = LocalDateTime.parse(dateStr, formatter);
+            LocalDateTime date = null;
+            try {
+                date = LocalDateTime.parse(dateStr, formatter);
+            } catch (Exception e) {
+                System.out.println("Erreur de format pour la date. Assurez-vous d'entrer une date valide.");
+                return;  // Sortir si la date est invalide
+            }
 
             // Demander le nombre de personnes
             System.out.print("Entrez le nombre de personnes : ");
@@ -48,10 +54,7 @@ public class Reservation {
             System.out.println(reservation.afficherReservation());
 
         } catch (Exception e) {
-            System.out.println("Format invalide. Assurez-vous d'entrer une date valide et un nombre correct.");
-        } finally {
-            scanner.close();
+            System.out.println("Erreur inattendue. Assurez-vous d'entrer des données valides.");
         }
     }
 }
-
