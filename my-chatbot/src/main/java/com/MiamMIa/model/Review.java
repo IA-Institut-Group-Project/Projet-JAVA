@@ -1,3 +1,5 @@
+package com.MiamMIa.model;
+
 import java.util.Scanner;
 
 public class Review {
@@ -33,8 +35,8 @@ public class Review {
 
     public String afficherReview() {
         return "Nom du client: " + clientName + "\n" +
-               "Commentaire: " + comment + "\n" +
-               "Note: " + rating + "/5";
+                "Commentaire: " + comment + "\n" +
+                "Note: " + rating + "/5";
     }
 
     // Méthode principale
@@ -42,15 +44,15 @@ public class Review {
         Scanner scanner = new Scanner(System.in);
 
         try {
-            // 
+            //
             System.out.print("Votre nom : ");
             String clientName = scanner.nextLine();
 
-            // 
+            //
             System.out.print("Votre commentaire : ");
             String comment = scanner.nextLine();
 
-            // 
+            //
             System.out.print("Entrez une note (0 à 5) : ");
             int rating = scanner.nextInt();
 
@@ -70,6 +72,3 @@ public class Review {
         }
     }
 }
-
-
-    

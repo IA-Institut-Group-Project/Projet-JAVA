@@ -1,4 +1,5 @@
-package model;
+package com.MiamMIa.model;
+
 
 public class MenuItem {
     private String name;
@@ -12,7 +13,7 @@ public class MenuItem {
         this.category = category;
     }
 
-    // Getter pour name
+    // Getter et Setter pour name
     public String getName() {
         return name;
     }
@@ -20,7 +21,7 @@ public class MenuItem {
         this.name = name;
     }
 
-    // Getter pour price    
+    // Getter et Setter pour price    
     public double getPrice() {
         return price;
     }
@@ -28,7 +29,7 @@ public class MenuItem {
         this.price = price;
     }
 
-    // Getter pour category
+    // Getter et Setter pour category
     public String getCategory() {
         return category;
     }
@@ -36,3 +37,4 @@ public class MenuItem {
         this.category = category;
     }
 }
+
