@@ -3,7 +3,7 @@
 ## Description
 
 
-1️⃣ Run the following command from the root directory (my-chatbot/)
+1️⃣ Run the following command from the root directory (🔹 **my-chatbot/**)
 
 ```
 mvn clean compile
