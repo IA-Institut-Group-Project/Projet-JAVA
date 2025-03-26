@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class Reservation {
     
-    LocalDateTime datetime; // date et heure
-    int nombreDePersonnes;
+    private LocalDateTime datetime; // Date et heure
+    private int nombreDePersonnes;
 
     // Constructeur
     public Reservation(LocalDateTime datetime, int nombreDePersonnes) {
@@ -15,11 +15,12 @@ public class Reservation {
         this.nombreDePersonnes = nombreDePersonnes;
     }
 
-    // Getters
+    // Getter pour la date
     public LocalDateTime getDate() {
         return datetime;
     }
 
+    // Getter pour le nombre de personnes
     public int getNumber() {
         return nombreDePersonnes;
     }
@@ -31,32 +32,35 @@ public class Reservation {
                ", Nombre de personnes = " + nombreDePersonnes;
     }
 
-    // Méthode principale
+    // Méthode pour vérifier si la réservation est expirée
+    public boolean estExpiree() {
+        return datetime.isBefore(LocalDateTime.now());
+    }
+
+    // Méthode main pour tester la classe Reservation
     public static void main(String[] args) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
 
         try (Scanner scanner = new Scanner(System.in)) {
-            // Demander la date et l'heure
             System.out.print("Entrez la date et l'heure (format: dd-MM-yyyy HH:mm) : ");
             String dateStr = scanner.nextLine();
-            LocalDateTime date = null;
+            LocalDateTime date;
             try {
                 date = LocalDateTime.parse(dateStr, formatter);
             } catch (Exception e) {
                 System.out.println("Erreur de format pour la date. Assurez-vous d'entrer une date valide.");
-                return;  // Sortir si la date est invalide
+                return;
             }
 
-            // Demander le nombre de personnes
             System.out.print("Entrez le nombre de personnes : ");
             int nombreDePersonnes = scanner.nextInt();
 
-            // Créer et afficher la réservation
             Reservation reservation = new Reservation(date, nombreDePersonnes);
             System.out.println(reservation.afficherReservation());
-
+            System.out.println("Est expirée ? " + reservation.estExpiree());
         } catch (Exception e) {
             System.out.println("Erreur inattendue. Assurez-vous d'entrer des données valides.");
         }
     }
 }
+
