@@ -49,26 +49,26 @@ my-chatbot
 │   │   ├── java/
 │   │   │   └── com/
 │   │   │       └── MiamMIa/
-│   │   │           ├── chatbot/
-│   │   │           │   └── App.java
 │   │   │           ├── model/
-│   │   │           │   └── Metier.java
-│   │   │           ├── service/
-│   │   │           │   └── Service.java
-│   │   │           └── util/
-│   │   │               ├── Main.class
-│   │   │               ├── Main.java
+│   │   │               ├── App.java
+│   │   │               ├── MenuItem.java
 │   │   │               ├── Order.class
 │   │   │               ├── Order.java
 │   │   │               ├── Reservation.class
 │   │   │               ├── Reservation.java
 │   │   │               ├── Review.class
 │   │   │               └── Review.java
-│   └── test/
-│       └── java/
-│           └── com/
-│               └── MiamMIa/
-│                   └── AppTest.java
+│   │   │           ├── service/
+│   │   │               ├── OrderManager.java
+│   │   │               ├── ReservationManager.java
+│   │   │               └── service.java
+│   │   │           └── util/
+│   │   │               ├── JsonRead.java
+│   │   │               ├── JsonWrite.java
+│   │   │               ├── OrderJsonUtil.java
+│   │   │               └── ReservationJsonUtil.java
+│   └── Main.java
+│    
 │
 └── pom.xml
 
