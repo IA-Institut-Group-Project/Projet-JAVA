@@ -2,7 +2,7 @@ package util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import model.MenuItem;
+import com.MiamMIa.model.MenuItem;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
