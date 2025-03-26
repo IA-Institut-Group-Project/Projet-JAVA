@@ -4,6 +4,26 @@
 ## Description
 
 
+```
+mvn clean compile exec:java -Dexec.mainClass="com.miammi.chatbot.Main"
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 | :memo:        | Membres du groupe       |
 |---------------|:------------------------|
