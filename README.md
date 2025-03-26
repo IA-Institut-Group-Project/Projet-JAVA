@@ -1,18 +1,25 @@
-# Projet-JAVA
+# Project JAVA
 
-# MiamMia
 ## Description
 
 
+1️⃣ Run the following command from the root directory (my-chatbot/)
+
+```
+mvn clean compile
+```
+
+
+2️⃣ Execute the main class using Maven
 ```
 mvn clean compile exec:java -Dexec.mainClass="com.miammi.chatbot.Main"
 ```
 
+3️⃣
 
 
 
-
-
+4️⃣
 
 
 
