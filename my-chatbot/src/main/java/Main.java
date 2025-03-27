@@ -120,7 +120,7 @@ public class Main {
         System.out.println(reservation.afficherReservation());
 
         // Enregistrer la réservation dans le fichier "reservations.json"
-        String reservationsFile = "reservations.json";
+        String reservationsFile = "current.json";
         List<Reservation> reservations = ReservationJsonUtil.readReservations(reservationsFile);
         reservations.add(reservation);
         ReservationJsonUtil.writeReservations(reservationsFile, reservations);
