@@ -50,8 +50,6 @@ Ajouter un produit (ou 'fin' pour terminer) : fin
 Commande ajoutée !
 Table: 45
 Produits: [pizza]
-Table: 45
-Produits: [pizza]
 Erreur lors de la lecture du fichier orders : orders.json (The system cannot find the file specified)
 Fichier orders sauvegardé avec succès à : C:\Users\kilia\Desktop\IA-B2\JAVA\Projet-JAVA\my-chatbot\orders.json
 Commande enregistrée avec succès !
@@ -62,7 +60,6 @@ Commande enregistrée avec succès !
 ## 🚀 Améliorations futures
 
 - Ajout d’une interface graphique (Swing ou JavaFX)
-- Gestion des utilisateurs avec authentification
 - Statistiques des commandes/réservations
 - Sauvegarde dans une base de données (ex: SQLite)
 
