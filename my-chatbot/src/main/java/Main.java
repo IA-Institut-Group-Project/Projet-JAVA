@@ -168,6 +168,20 @@ public class Main {
     // * The date and time are expected in the format "dd-MM-yyyy HH:mm".
     private static void faireReservation(Scanner scanner) {
         System.out.println("=== Faire une réservation de table ===");
+        // Méthode pour gérer la réservation de table, incluant l'affichage des horaires
+        // et leur vérification
+        // Affichage des plages horaires d'ouverture
+        System.out.println();
+        System.out.println(
+                "Veuillez consulter les horaires d'ouverture du restaurant et saisir votre réservation en respectant le format indiqué :");
+        System.out.println("Lundi     : Fermé");
+        System.out.println("Mardi     : 12:00 - 14:30 | 19:00 - 22:00");
+        System.out.println("Mercredi  : 12:00 - 14:30 | 19:00 - 22:00");
+        System.out.println("Jeudi     : 12:00 - 14:30 | 19:00 - 22:00");
+        System.out.println("Vendredi  : 12:00 - 14:30 | 19:00 - 23:00");
+        System.out.println("Samedi    : 12:00 - 14:30 | 19:00 - 23:00");
+        System.out.println("Dimanche  : 12:00 - 14:30 | 19:00 - 22:00");
+        System.out.println();
 
         System.out.print("Entrez la date et l'heure (format: dd-MM-yyyy HH:mm) : ");
         String dateStr = scanner.nextLine();
@@ -175,10 +189,10 @@ public class Main {
         System.out.print("Entrez le nombre de personnes : ");
         int nombreDePersonnes = scanner.nextInt();
         scanner.nextLine();
-
+        System.out.println("");
         Reservation reservation = new Reservation(dateStr, nombreDePersonnes);
         System.out.println(reservation.afficherReservation());
-
+        System.out.println("");
         // Enregistrer la réservation dans le fichier "reservations.json"
         String reservationsFile = "current.json";
         List<Reservation> reservations = ReservationJsonUtil.readReservations(reservationsFile);
