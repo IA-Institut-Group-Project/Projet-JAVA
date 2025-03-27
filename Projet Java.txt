@@ -1,0 +1,15 @@
+Dans le menu : 
+
+
+Anaïs : Ajouter horaire d'ouverture, régler bug réservation
+
+Yasmine : Ajouter JSON pour les avis, renommer "reservations.json" par "current.json", 
+
+Kilian : Sous menu dans commande et faire la liste des produits possibles
+ 
+
+
+Bonus : - Travailler sur l'interface (web ?), gérer les erreurs
+
+
+
