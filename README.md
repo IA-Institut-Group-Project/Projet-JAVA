@@ -51,7 +51,7 @@ my-chatbot
 │                   ├── service/
 │                   │   ├── OrderManager.java
 │                   │   ├── ReservationManager.java
-│                   │   └── Service.java
+│                   │
 │                   └── util/
 │                       ├── JsonRead.java
 │                       ├── JsonWrite.java
