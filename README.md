@@ -12,7 +12,7 @@ mvn clean compile
 
 2️⃣ Execute the main class using Maven
 ```
-mvn clean compile exec:java -Dexec.mainClass="com.miammi.chatbot.Main"
+mvn clean compile exec:java "-Dexec.mainClass=com.miammi.chatbot.Main"
 ```
 
 3️⃣
