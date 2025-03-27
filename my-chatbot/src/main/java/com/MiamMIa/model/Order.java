@@ -3,7 +3,6 @@ package com.MiamMIa.model;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Order {
     private int tableNumber; // Numéro de la table
     private List<String> items; // Liste des produits
@@ -47,9 +46,7 @@ public class Order {
 
     // Méthode pour afficher les détails de la commande
     public String afficherOrder() {
-        String details = "Table: " + getTableNumber() + "\nProduits: " + getItems();
-        System.out.println(details);
-        return details;
+        return "Table: " + getTableNumber() + "\nProduits: " + getItems();
     }
 
     // Méthode main pour tester la classe
@@ -65,4 +62,3 @@ public class Order {
         System.out.println("Après avoir vidé la commande: " + order.getItems());
     }
 }
-
