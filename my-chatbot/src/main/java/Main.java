@@ -123,7 +123,9 @@ public class Main {
             }
             order.addItem(item);
         }
+        System.out.println("");
         System.out.println(order.afficherOrder());
+        System.out.println("");
 
         // Enregistrer la commande dans le fichier "orders.json"
         String ordersFile = "orders.json";
