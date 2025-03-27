@@ -9,7 +9,7 @@ Yasmine : Sous menu dans commande et faire la liste des produits possibles
 Kilian : J'ai fais le JSON, Renommer "reservations.json" par "current.json", 
 
 
-Bonus : - Travailler sur l'interface (web ?), gérer les erreurs
+Bonus : - Travailler sur l'interface (web ?), gérer les erreurs (déjà fait pour la note)
 
 
 
