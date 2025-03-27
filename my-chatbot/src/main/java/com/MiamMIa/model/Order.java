@@ -3,6 +3,7 @@ package com.MiamMIa.model;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Order {
     private int tableNumber; // Numéro de la table
     private List<String> items; // Liste des produits

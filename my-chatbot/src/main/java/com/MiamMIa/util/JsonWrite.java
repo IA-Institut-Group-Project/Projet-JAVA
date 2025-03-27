@@ -8,6 +8,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+//* JsonWrite Class
+//  * This class is responsible for writing a list of menu items to a JSON file.
+//  * It uses the Gson library to convert Java objects into JSON format.
 public class JsonWrite {
     public static void main(String[] args) {
         List<MenuItem> menu = new ArrayList<>();

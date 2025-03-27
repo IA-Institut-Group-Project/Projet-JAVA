@@ -14,6 +14,11 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+// * ReviewJsonUtil est une classe utilitaire pour lire et écrire des avis au format JSON.
+// * Elle utilise la bibliothèque Gson pour la sérialisation et la désérialisation des objets Review.
+// * La classe fournit deux méthodes : readReviews pour lire les avis depuis un fichier JSON
+// * et writeReviews pour écrire une liste d'avis dans un fichier JSON.
+
 public class ReviewJsonUtil {
 
     // Lit les avis depuis un fichier JSON

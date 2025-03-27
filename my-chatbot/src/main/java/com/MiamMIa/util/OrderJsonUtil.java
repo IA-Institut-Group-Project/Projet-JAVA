@@ -13,13 +13,17 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+// * OrderJsonUtil est une classe utilitaire pour lire et écrire des commandes au format JSON.
+// * Elle utilise la bibliothèque Gson pour la sérialisation et la désérialisation des objets Order.
+
 public class OrderJsonUtil {
 
     // Lit les commandes depuis un fichier JSON
     public static List<Order> readOrders(String fileName) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileReader reader = new FileReader(fileName)) {
-            Type orderListType = new TypeToken<List<Order>>() {}.getType();
+            Type orderListType = new TypeToken<List<Order>>() {
+            }.getType();
             List<Order> orders = gson.fromJson(reader, orderListType);
             return orders != null ? orders : new ArrayList<>();
         } catch (IOException e) {
@@ -39,4 +43,3 @@ public class OrderJsonUtil {
         }
     }
 }
-

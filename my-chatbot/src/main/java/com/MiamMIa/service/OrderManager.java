@@ -1,3 +1,4 @@
+
 package com.MiamMIa.service;
 
 import com.google.gson.Gson;
@@ -12,6 +13,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+//* OrderManager Class
+//  * This class manages the orders in the MiamMia application.
+//  * It provides methods to add, display, and archive orders.
+//  * The orders are stored in JSON files for persistence.
 public class OrderManager {
 
     private static final String COMMANDES_FILE = "resources/commandes.json";

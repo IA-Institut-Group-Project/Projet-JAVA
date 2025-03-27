@@ -2,6 +2,11 @@ package com.MiamMIa.model;
 
 import java.util.Scanner;
 
+//* MiamMia Chatbot Review Class
+//  * This class represents a review given by a client for a restaurant or service.
+//  * It includes the client's name, their comment, and a rating from 0 to 5.
+//  * The class provides methods to set and get these attributes, as well as to display the review details.
+//  *
 public class Review {
 
     String clientName;

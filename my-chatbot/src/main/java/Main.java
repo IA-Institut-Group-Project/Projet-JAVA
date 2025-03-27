@@ -12,11 +12,24 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
+//* MiamMia Chatbot Main Class
+//  * This class serves as the entry point for the MiamMia chatbot application.
+//  * It provides a command-line interface for users to interact with the chatbot,
+//  * allowing them to give reviews, place orders, and make reservations.
+//  *
+//  * @author MiamMia Team
+//  * @version 1.0
 public class Main {
 
+    // * Main method to run the MiamMia chatbot application.
+    // * It presents a menu to the user and handles their choices.
     public static void main(String[] args) {
 
+        // * Create a Scanner object for user input.
+        // * The Scanner is used to read input from the console.
         Scanner scanner = new Scanner(System.in);
+        // * Print a welcome message to the user.
+        // * This message is displayed when the application starts.
         boolean running = true;
         while (running) {
             System.out.println("Bienvenue chez MiamMia ! Que souhaitez-vous faire ?");
@@ -45,9 +58,14 @@ public class Main {
                     System.out.println("Choix invalide, veuillez réessayer.");
             }
         }
+        // * Close the Scanner object to free up resources.
+        // * This is important to prevent resource leaks.
         scanner.close();
     }
 
+    // * Method to handle user reviews.
+    // * It prompts the user for their name, comment, and rating,
+    // * and saves the review to a JSON file.
     private static void donnerAvis(Scanner scanner) {
         System.out.println("=== Donner un avis ===");
         System.out.print("Votre nom : ");
@@ -55,6 +73,12 @@ public class Main {
         System.out.print("Votre commentaire : ");
         String commentaire = scanner.nextLine();
 
+        // Validation de la note
+        // La note doit être un entier entre 0 et 5
+        // Si la note est invalide, on redemande à l'utilisateur de saisir une note
+        // valide
+        // On utilise une boucle pour continuer à demander jusqu'à ce qu'une note valide
+        // soit saisie
         int note;
         while (true) {
             System.out.print("Votre note (sur 5) : ");
@@ -66,7 +90,9 @@ public class Main {
                 break;
             }
         }
-
+        // Afficher un message de remerciement à l'utilisateur
+        // On utilise la méthode afficherReview() de la classe Review pour afficher les
+        // détails de l'avis
         System.out.println("Merci pour votre avis, " + nom + " !");
         Review review = new Review(nom, commentaire, note);
 
@@ -78,6 +104,9 @@ public class Main {
         System.out.println(review.afficherReview());
     }
 
+    // * Method to handle placing an order.
+    // * It prompts the user for the table number and items to order,
+    // * and saves the order to a JSON file.
     private static void passerCommande(Scanner scanner) {
         System.out.println("=== Passer une commande ===");
         System.out.print("Numéro de table : ");
@@ -104,6 +133,10 @@ public class Main {
         System.out.println("Commande enregistrée avec succès !");
     }
 
+    // * Method to handle table reservations.
+    // * It prompts the user for the date, time, and number of people,
+    // * and saves the reservation to a JSON file.
+    // * The date and time are expected in the format "dd-MM-yyyy HH:mm".
     private static void faireReservation(Scanner scanner) {
         System.out.println("=== Faire une réservation de table ===");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");

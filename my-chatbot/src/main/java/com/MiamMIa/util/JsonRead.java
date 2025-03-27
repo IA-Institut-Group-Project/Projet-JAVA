@@ -11,6 +11,14 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.List;
 
+//* JsonRead Class
+//  * This class is responsible for reading a JSON file containing menu items and displaying them.
+//  * It uses the Gson library to parse the JSON data into Java objects.
+//  *
+//  * @author MiamMia Team
+//  * @version 1.0
+//  * @since 2023-10-01
+//  */
 public class JsonRead {
     public static void main(String[] args) {
         

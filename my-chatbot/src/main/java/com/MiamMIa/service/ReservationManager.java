@@ -13,6 +13,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+//* ReservationManager est une classe qui gère les réservations de tables dans le restaurant.
+//  * Elle permet d'ajouter, d'afficher et d'archiver les réservations.
+//  * Les réservations sont stockées dans des fichiers JSON pour la persistance.
+
 public class ReservationManager {
 
     private static final String CURRENT_RESERVATIONS_FILE = "resources/reservation/current.json";
