@@ -112,27 +112,54 @@ public class Main {
         System.out.print("Numéro de table : ");
         int tableNumber = scanner.nextInt();
         scanner.nextLine();
-
         Order order = new Order(tableNumber);
-        String item;
-        while (true) {
-            System.out.print("Ajouter un produit (ou 'fin' pour terminer) : ");
-            item = scanner.nextLine();
-            if (item.equalsIgnoreCase("fin")) {
-                break;
+        boolean ordering = true;
+        while (ordering) {
+            System.out.println("Sélectionnez une catégorie :");
+            System.out.println("1. Plats");
+            System.out.println("2. Desserts");
+            System.out.println("3. Boissons");
+            System.out.println("4. Terminer la commande");
+            System.out.print("Votre choix : ");
+            int choix = scanner.nextInt();
+            scanner.nextLine();
+            switch (choix) {
+                case 1:
+                    ajouterProduit(scanner, order, "Plats", new String[] { "Pizza", "Burger", "Pâtes" });
+                    break;
+                case 2:
+                    ajouterProduit(scanner, order, "Desserts", new String[] { "Tarte", "Glace", "Mousse au chocolat" });
+                    break;
+                case 3:
+                    ajouterProduit(scanner, order, "Boissons", new String[] { "Eau", "Soda", "Jus d'orange" });
+                    break;
+                case 4:
+                    ordering = false;
+                    break;
+                default:
+                    System.out.println("Choix invalide, veuillez réessayer.");
             }
-            order.addItem(item);
         }
-        System.out.println("");
-        System.out.println(order.afficherOrder());
-        System.out.println("");
-
-        // Enregistrer la commande dans le fichier "orders.json"
-        String ordersFile = "orders.json";
-        List<Order> orders = OrderJsonUtil.readOrders(ordersFile);
+        System.out.println("\n" + order.afficherOrder() + "\n");
+        List<Order> orders = OrderJsonUtil.readOrders("orders.json");
         orders.add(order);
-        OrderJsonUtil.writeOrders(ordersFile, orders);
+        OrderJsonUtil.writeOrders("orders.json", orders);
         System.out.println("Commande enregistrée avec succès !");
+    }
+
+    private static void ajouterProduit(Scanner scanner, Order order, String categorie, String[] produits) {
+        System.out.println("=== " + categorie + " ===");
+        for (int i = 0; i < produits.length; i++) {
+            System.out.println((i + 1) + ". " + produits[i]);
+        }
+        System.out.println("0. Retour au menu principal");
+        System.out.print("Votre choix : ");
+        int choix = scanner.nextInt();
+        scanner.nextLine();
+        if (choix > 0 && choix <= produits.length) {
+            order.addItem(produits[choix - 1]);
+            System.out.println(produits[choix - 1] + " ajouté à la commande.");
+        }
     }
 
     // * Method to handle table reservations.
