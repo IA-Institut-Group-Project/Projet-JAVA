@@ -83,7 +83,7 @@ Commande enregistrée avec succès !
 
    ```bash
    mvn clean compile
-   mvn exec:java -Dexec.mainClass="com.miammi.chatbot.Main"
+   mvn exec:java "-Dexec.mainClass=com.miammi.chatbot.Main"
    ```
 
 ---
