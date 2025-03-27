@@ -5,6 +5,7 @@ import com.MiamMIa.model.Order;
 import com.MiamMIa.model.Reservation;
 import com.MiamMIa.util.OrderJsonUtil;
 import com.MiamMIa.util.ReservationJsonUtil;
+import com.MiamMIa.util.ReviewJsonUtil;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -14,7 +15,8 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in); 
+
+        Scanner scanner = new Scanner(System.in);
         boolean running = true;
         while (running) {
             System.out.println("Bienvenue chez MiamMia ! Que souhaitez-vous faire ?");
@@ -24,7 +26,7 @@ public class Main {
             System.out.println("4. Quitter");
             System.out.print("Votre choix : ");
             int choix = scanner.nextInt();
-            scanner.nextLine(); 
+            scanner.nextLine();
             switch (choix) {
                 case 1:
                     donnerAvis(scanner);
@@ -52,15 +54,27 @@ public class Main {
         String nom = scanner.nextLine();
         System.out.print("Votre commentaire : ");
         String commentaire = scanner.nextLine();
-        System.out.print("Votre note (sur 5) : ");
-        int note = scanner.nextInt();
-        scanner.nextLine();
-        if (note < 0 || note > 5) {
-            System.out.println("La note doit être comprise entre 0 et 5.");
-        } else {
-            System.out.println("Merci pour votre avis, " + nom + " !");
+
+        int note;
+        while (true) {
+            System.out.print("Votre note (sur 5) : ");
+            note = scanner.nextInt();
+            scanner.nextLine();
+            if (note < 0 || note > 5) {
+                System.out.println("La note doit être comprise entre 0 et 5. Veuillez réessayer.");
+            } else {
+                break;
+            }
         }
+
+        System.out.println("Merci pour votre avis, " + nom + " !");
         Review review = new Review(nom, commentaire, note);
+
+        // Charger les avis existants, ajouter le nouveau et sauvegarder
+        List<Review> reviews = ReviewJsonUtil.readReviews("reviews.json");
+        reviews.add(review);
+        ReviewJsonUtil.writeReviews("reviews.json", reviews);
+
         System.out.println(review.afficherReview());
     }
 
@@ -81,7 +95,7 @@ public class Main {
             order.addItem(item);
         }
         System.out.println(order.afficherOrder());
-        
+
         // Enregistrer la commande dans le fichier "orders.json"
         String ordersFile = "orders.json";
         List<Order> orders = OrderJsonUtil.readOrders(ordersFile);
@@ -104,7 +118,7 @@ public class Main {
 
         Reservation reservation = new Reservation(date, nombreDePersonnes);
         System.out.println(reservation.afficherReservation());
-        
+
         // Enregistrer la réservation dans le fichier "reservations.json"
         String reservationsFile = "reservations.json";
         List<Reservation> reservations = ReservationJsonUtil.readReservations(reservationsFile);
@@ -113,4 +127,3 @@ public class Main {
         System.out.println("Réservation enregistrée avec succès !");
     }
 }
-
