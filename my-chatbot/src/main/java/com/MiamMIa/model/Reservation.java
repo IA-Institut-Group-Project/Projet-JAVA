@@ -1,22 +1,20 @@
 package com.MiamMIa.model;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Reservation {
-    
-    private LocalDateTime datetime; // Date et heure
+
+    private String datetime; // Date et heure stockées en String
     private int nombreDePersonnes;
 
     // Constructeur
-    public Reservation(LocalDateTime datetime, int nombreDePersonnes) {
+    public Reservation(String datetime, int nombreDePersonnes) {
         this.datetime = datetime;
         this.nombreDePersonnes = nombreDePersonnes;
     }
 
     // Getter pour la date
-    public LocalDateTime getDate() {
+    public String getDate() {
         return datetime;
     }
 
@@ -27,39 +25,31 @@ public class Reservation {
 
     // Afficher la réservation
     public String afficherReservation() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-        return "Réservation : Date et Heure = " + datetime.format(formatter) +
-               ", Nombre de personnes = " + nombreDePersonnes;
-    }
-
-    // Méthode pour vérifier si la réservation est expirée
-    public boolean estExpiree() {
-        return datetime.isBefore(LocalDateTime.now());
+        return "Réservation : Date et Heure = " + datetime +
+                ", Nombre de personnes = " + nombreDePersonnes;
     }
 
     // Méthode main pour tester la classe Reservation
     public static void main(String[] args) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("Entrez la date et l'heure (format: dd-MM-yyyy HH:mm) : ");
             String dateStr = scanner.nextLine();
-            LocalDateTime date;
-            try {
-                date = LocalDateTime.parse(dateStr, formatter);
-            } catch (Exception e) {
-                System.out.println("Erreur de format pour la date. Assurez-vous d'entrer une date valide.");
-                return;
-            }
 
             System.out.print("Entrez le nombre de personnes : ");
             int nombreDePersonnes = scanner.nextInt();
 
-            Reservation reservation = new Reservation(date, nombreDePersonnes);
+            Reservation reservation = new Reservation(dateStr, nombreDePersonnes);
+
             System.out.println(reservation.afficherReservation());
-            System.out.println("Est expirée ? " + reservation.estExpiree());
         } catch (Exception e) {
             System.out.println("Erreur inattendue. Assurez-vous d'entrer des données valides.");
         }
     }
 }
+
+// * Reservation est une classe qui représente une réservation de table dans un
+// restaurant.
+// * Elle contient des attributs pour la date et l'heure de la réservation,
+// ainsi que le nombre de personnes.
+// * La classe fournit des méthodes pour afficher la réservation et pour
+// récupérer les informations de réservation.

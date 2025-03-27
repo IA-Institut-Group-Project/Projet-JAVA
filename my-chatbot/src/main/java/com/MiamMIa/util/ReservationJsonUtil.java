@@ -13,19 +13,13 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-// * ReservationJsonUtil est une classe utilitaire pour lire et écrire des réservations au format JSON.
-// * Elle utilise la bibliothèque Gson pour la sérialisation et la désérialisation des objets Reservation.
-// * La classe fournit deux méthodes : readReservations pour lire les réservations depuis un fichier JSON
-// * et writeReservations pour écrire une liste de réservations dans un fichier JSON.
-// * Elle gère également les exceptions liées à la lecture et à l'écriture des fichiers JSON.
 public class ReservationJsonUtil {
 
     // Lit les réservations depuis un fichier JSON
     public static List<Reservation> readReservations(String fileName) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileReader reader = new FileReader(fileName)) {
-            Type reservationListType = new TypeToken<List<Reservation>>() {
-            }.getType();
+            Type reservationListType = new TypeToken<List<Reservation>>() {}.getType();
             List<Reservation> reservations = gson.fromJson(reader, reservationListType);
             return reservations != null ? reservations : new ArrayList<>();
         } catch (IOException e) {
@@ -39,10 +33,11 @@ public class ReservationJsonUtil {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter(fileName)) {
             gson.toJson(reservations, writer);
-            System.out
-                    .println("Fichier reservations sauvegardé avec succès à : " + new File(fileName).getAbsolutePath());
+            System.out.println("Fichier reservations sauvegardé avec succès à : " + new File(fileName).getAbsolutePath());
         } catch (IOException e) {
             System.out.println("Erreur lors de l'écriture du fichier reservations : " + e.getMessage());
         }
     }
 }
+// * ReservationJsonUtil est une classe utilitaire pour gérer la sérialisation et la désérialisation des objets Reservation.
+// * Elle utilise la bibliothèque Gson pour lire et écrire des fichiers JSON contenant des réservations.

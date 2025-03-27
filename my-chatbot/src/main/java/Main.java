@@ -141,17 +141,15 @@ public class Main {
     // * The date and time are expected in the format "dd-MM-yyyy HH:mm".
     private static void faireReservation(Scanner scanner) {
         System.out.println("=== Faire une réservation de table ===");
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
 
         System.out.print("Entrez la date et l'heure (format: dd-MM-yyyy HH:mm) : ");
         String dateStr = scanner.nextLine();
-        LocalDateTime date = LocalDateTime.parse(dateStr, formatter);
 
         System.out.print("Entrez le nombre de personnes : ");
         int nombreDePersonnes = scanner.nextInt();
         scanner.nextLine();
 
-        Reservation reservation = new Reservation(date, nombreDePersonnes);
+        Reservation reservation = new Reservation(dateStr, nombreDePersonnes);
         System.out.println(reservation.afficherReservation());
 
         // Enregistrer la réservation dans le fichier "reservations.json"
